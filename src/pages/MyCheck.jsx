@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const UserList = () => {
+const MyCheck = () => {
   const [checks, setChecks] = useState([]);
 
   useEffect(() => {
+    
     const fetchChecks = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/checks');
+        const token = localStorage.getItem('token');
+        const response = await axios.get('http://localhost:8080/api/checks', {
+          headers: {
+            'Authorization': `Bearer ${token}` 
+          }
+        });
         setChecks(response.data);
       } catch (error) {
         console.error('Error fetching checks', error);
@@ -59,7 +65,7 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default MyCheck;
 
 
 // import React from 'react'
