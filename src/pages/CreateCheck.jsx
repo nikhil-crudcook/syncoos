@@ -1,180 +1,3 @@
-// import React, { useState } from 'react';
-// import axios from 'axios';
-// import Tooltip from '@mui/material/Tooltip';
-// import IconButton from '@mui/material/IconButton';
-// import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-// import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-
-// const CreateCheck = () => {
-//   const [forms, setForms] = useState([
-//     {
-//       bankAccount: '',
-//       payee: '',
-//       amount: '',
-//       checkNumber: '',
-//       issueDate: '',
-//       invoiceId: '',
-//       memo: '',
-//       tags: '',
-//       status: 'Draft'
-//     }
-//   ]);
-
-//   const handleChange = (index, e) => {
-//     const newForms = forms.slice();
-//     newForms[index] = {
-//       ...newForms[index],
-//       [e.target.name]: e.target.value
-//     };
-//     setForms(newForms);
-//   };
-
-//   const handleSubmit = async (index, e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await axios.post('http://localhost:8080/api/checks', forms[index]);
-//       console.log(response.data);
-//       // Reset form if needed
-//       const newForms = forms.slice();
-//       newForms[index] = {
-//         bankAccount: '',
-//         payee: '',
-//         amount: '',
-//         checkNumber: '',
-//         issueDate: '',
-//         invoiceId: '',
-//         memo: '',
-//         tags: '',
-//         status: 'Draft'
-//       };
-//       setForms(newForms);
-//     } catch (error) {
-//       console.error('Error creating check', error);
-//     }
-//   };
-
-//   const addForm = () => {
-//     setForms([
-//       ...forms,
-//       {
-//         bankAccount: '',
-//         payee: '',
-//         amount: '',
-//         checkNumber: '',
-//         issueDate: '',
-//         invoiceId: '',
-//         memo: '',
-//         tags: '',
-//         status: 'Draft'
-//       }
-//     ]);
-//   };
-
-//   return (
-//     <>
-//       <div className="my-3 hstack">
-//         <h2 className='mx-4'>Create Check</h2>
-//         <div className='ms-auto'>
-//           <Tooltip title="Help">
-//             <IconButton>
-//               <HelpOutlineIcon />
-//             </IconButton>
-//           </Tooltip>
-//         </div>
-//       </div>
-//       <hr className="mx-4"></hr>
-      
-//       {forms.map((form, index) => (
-//         <form key={index} className="row g-3 my-4 p-4" onSubmit={(e) => handleSubmit(index, e)}>
-//           <div className="col-md-4">
-//             <select name="bankAccount" value={form.bankAccount} onChange={(e) => handleChange(index, e)} className="form-select">
-//               <option value="">Select Bank Account</option>
-//               <option value="account1">Account 1</option>
-//               <option value="account2">Account 2</option>
-//             </select>
-//           </div>
-//           <div className="col-md-4">
-//             <select name="payee" value={form.payee} onChange={(e) => handleChange(index, e)} className="form-select">
-//               <option value="">Select Payee</option>
-//               <option value="payee1">Payee 1</option>
-//               <option value="payee2">Payee 2</option>
-//             </select>
-//           </div>
-//           <div className="col-md-4 hstack">
-//             <input
-//               type="text"
-//               name="amount"
-//               value={form.amount}
-//               onChange={(e) => handleChange(index, e)}
-//               className="form-control"
-//               placeholder="Enter Amount"
-//             />
-//             <AttachMoneyIcon/>
-//           </div>
-//           <div className="col-md-4">
-//             <input
-//               type="text"
-//               name="checkNumber"
-//               value={form.checkNumber}
-//               onChange={(e) => handleChange(index, e)}
-//               className="form-control"
-//               placeholder="Check Number*"
-//             />
-//           </div>
-//           <div className="col-md-4">
-//             <input
-//               type="date"
-//               name="issueDate"
-//               value={form.issueDate}
-//               onChange={(e) => handleChange(index, e)}
-//               className="form-control"
-//             />
-//           </div>
-//           <div className="col-md-4">
-//             <input
-//               type="text"
-//               name="invoiceId"
-//               value={form.invoiceId}
-//               onChange={(e) => handleChange(index, e)}
-//               className="form-control"
-//               placeholder="Invoice ID"
-//             />
-//           </div>
-//           <div className="col-md-4">
-//             <input
-//               type="text"
-//               name="memo"
-//               value={form.memo}
-//               onChange={(e) => handleChange(index, e)}
-//               className="form-control"
-//               placeholder="Memo"
-//             />
-//           </div>
-//           <div className="col-md-4">
-//             <select name="tags" value={form.tags} onChange={(e) => handleChange(index, e)} className="form-select">
-//               <option value="">Select Tags</option>
-//               <option value="tag1">Tag 1</option>
-//               <option value="tag2">Tag 2</option>
-//             </select>
-//           </div>
-//           <div className="col-md-4">
-//             <select name="status" value={form.status} onChange={(e) => handleChange(index, e)} className="form-select">
-//               <option value="Draft">Draft</option>
-//               <option value="Submitted">Submitted</option>
-//             </select>
-//           </div>
-//           <button type="submit" className="btn btn-outline-dark col-2 mx-2">Save & Print</button>
-//           <button type="submit" className="btn btn-outline-dark col-1">Save</button>
-//           <button type="button" className="btn btn-outline-dark col-1 ms-auto">Preview</button>
-//         </form>
-//       ))}
-//       <button type="button" className="btn btn-outline-dark col-2 mx-2" onClick={addForm}>Add Check</button>
-//     </>
-//   );
-// };
-
-// export default CreateCheck;
-
 import React from 'react';
 import  axios from 'axios';
 import { useState } from 'react';
@@ -482,3 +305,180 @@ const CreateCheck = () => {
 }
 
 export default CreateCheck
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+// import Tooltip from '@mui/material/Tooltip';
+// import IconButton from '@mui/material/IconButton';
+// import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+// import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+
+// const CreateCheck = () => {
+//   const [forms, setForms] = useState([
+//     {
+//       bankAccount: '',
+//       payee: '',
+//       amount: '',
+//       checkNumber: '',
+//       issueDate: '',
+//       invoiceId: '',
+//       memo: '',
+//       tags: '',
+//       status: 'Draft'
+//     }
+//   ]);
+
+//   const handleChange = (index, e) => {
+//     const newForms = forms.slice();
+//     newForms[index] = {
+//       ...newForms[index],
+//       [e.target.name]: e.target.value
+//     };
+//     setForms(newForms);
+//   };
+
+//   const handleSubmit = async (index, e) => {
+//     e.preventDefault();
+//     try {
+//       const response = await axios.post('http://localhost:8080/api/checks', forms[index]);
+//       console.log(response.data);
+//       // Reset form if needed
+//       const newForms = forms.slice();
+//       newForms[index] = {
+//         bankAccount: '',
+//         payee: '',
+//         amount: '',
+//         checkNumber: '',
+//         issueDate: '',
+//         invoiceId: '',
+//         memo: '',
+//         tags: '',
+//         status: 'Draft'
+//       };
+//       setForms(newForms);
+//     } catch (error) {
+//       console.error('Error creating check', error);
+//     }
+//   };
+
+//   const addForm = () => {
+//     setForms([
+//       ...forms,
+//       {
+//         bankAccount: '',
+//         payee: '',
+//         amount: '',
+//         checkNumber: '',
+//         issueDate: '',
+//         invoiceId: '',
+//         memo: '',
+//         tags: '',
+//         status: 'Draft'
+//       }
+//     ]);
+//   };
+
+//   return (
+//     <>
+//       <div className="my-3 hstack">
+//         <h2 className='mx-4'>Create Check</h2>
+//         <div className='ms-auto'>
+//           <Tooltip title="Help">
+//             <IconButton>
+//               <HelpOutlineIcon />
+//             </IconButton>
+//           </Tooltip>
+//         </div>
+//       </div>
+//       <hr className="mx-4"></hr>
+      
+//       {forms.map((form, index) => (
+//         <form key={index} className="row g-3 my-4 p-4" onSubmit={(e) => handleSubmit(index, e)}>
+//           <div className="col-md-4">
+//             <select name="bankAccount" value={form.bankAccount} onChange={(e) => handleChange(index, e)} className="form-select">
+//               <option value="">Select Bank Account</option>
+//               <option value="account1">Account 1</option>
+//               <option value="account2">Account 2</option>
+//             </select>
+//           </div>
+//           <div className="col-md-4">
+//             <select name="payee" value={form.payee} onChange={(e) => handleChange(index, e)} className="form-select">
+//               <option value="">Select Payee</option>
+//               <option value="payee1">Payee 1</option>
+//               <option value="payee2">Payee 2</option>
+//             </select>
+//           </div>
+//           <div className="col-md-4 hstack">
+//             <input
+//               type="text"
+//               name="amount"
+//               value={form.amount}
+//               onChange={(e) => handleChange(index, e)}
+//               className="form-control"
+//               placeholder="Enter Amount"
+//             />
+//             <AttachMoneyIcon/>
+//           </div>
+//           <div className="col-md-4">
+//             <input
+//               type="text"
+//               name="checkNumber"
+//               value={form.checkNumber}
+//               onChange={(e) => handleChange(index, e)}
+//               className="form-control"
+//               placeholder="Check Number*"
+//             />
+//           </div>
+//           <div className="col-md-4">
+//             <input
+//               type="date"
+//               name="issueDate"
+//               value={form.issueDate}
+//               onChange={(e) => handleChange(index, e)}
+//               className="form-control"
+//             />
+//           </div>
+//           <div className="col-md-4">
+//             <input
+//               type="text"
+//               name="invoiceId"
+//               value={form.invoiceId}
+//               onChange={(e) => handleChange(index, e)}
+//               className="form-control"
+//               placeholder="Invoice ID"
+//             />
+//           </div>
+//           <div className="col-md-4">
+//             <input
+//               type="text"
+//               name="memo"
+//               value={form.memo}
+//               onChange={(e) => handleChange(index, e)}
+//               className="form-control"
+//               placeholder="Memo"
+//             />
+//           </div>
+//           <div className="col-md-4">
+//             <select name="tags" value={form.tags} onChange={(e) => handleChange(index, e)} className="form-select">
+//               <option value="">Select Tags</option>
+//               <option value="tag1">Tag 1</option>
+//               <option value="tag2">Tag 2</option>
+//             </select>
+//           </div>
+//           <div className="col-md-4">
+//             <select name="status" value={form.status} onChange={(e) => handleChange(index, e)} className="form-select">
+//               <option value="Draft">Draft</option>
+//               <option value="Submitted">Submitted</option>
+//             </select>
+//           </div>
+//           <button type="submit" className="btn btn-outline-dark col-2 mx-2">Save & Print</button>
+//           <button type="submit" className="btn btn-outline-dark col-1">Save</button>
+//           <button type="button" className="btn btn-outline-dark col-1 ms-auto">Preview</button>
+//         </form>
+//       ))}
+//       <button type="button" className="btn btn-outline-dark col-2 mx-2" onClick={addForm}>Add Check</button>
+//     </>
+//   );
+// };
+
+// export default CreateCheck;
