@@ -1,0 +1,89 @@
+/* src/index.css */
+.bg-primary-custom {
+    background: linear-gradient(135deg, #0d3633, #abcdef) !important;
+  }
+
+.bg-middle-custom{
+    background-color:#0d3633;
+}
+  
+  /* .absolute-cont {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .headline-txt {
+    font-size: 1.5rem;
+  }
+  
+  .yellow-green-txt {
+    color: #a2dc56; 
+  }
+   */
+
+   .headline-txt {
+    font-size: 4rem;
+  }
+
+   .yellow-green-txt {
+    color: #98ee4d; 
+  }
+  /* Additional styles for the content */
+  .writer-feature {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .text-start {
+    text-align: start;
+  }
+  
+  .txt-left {
+    text-align: left;
+    padding: 0 1rem;
+  }
+  
+  /* .feature-box {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f5fbd8;
+  } */
+
+  /* .feature-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7feab;
+    border-radius: 50%;
+  }
+
+  .feature-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-left: 10px;
+  }
+
+  .feature-description {
+    font-size: 1rem;
+    color: #6c757d;
+  } */
+  hr {
+    border: none;
+    border-top: 2px solid #e7feab; /* Customize the color and thickness */
+    margin: 20px 0; /* Add spacing if needed */
+  }
+
+  ul{
+    
+    list-style-type: none;
+    padding-left:0;
+  }
