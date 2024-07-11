@@ -40,6 +40,7 @@ const GoogleLoginComponent = ({ onLoginSuccess }) => {
 
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+    {console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID)}
       <GoogleLogin
         onSuccess={handleSuccess}
         onError={handleFailure}

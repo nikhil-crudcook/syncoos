@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import Comp from './Comp';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -51,6 +52,8 @@ const Register = () => {
   };
 
   return (
+    <div className='d-flex flex-row justify-content-center align-items-center'> 
+    <Comp/>
     <div className="container col-md-4">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
@@ -113,6 +116,7 @@ const Register = () => {
         <button type="submit" className="btn btn-success mb-2">Register</button>
         <p>Already have an account? <Link to="/login">Login</Link></p>
       </form>
+    </div>
     </div>
   );
 };

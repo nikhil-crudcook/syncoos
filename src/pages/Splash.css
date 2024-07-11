@@ -1,12 +1,16 @@
 /* src/index.css */
 .bg-primary-custom {
-    background: linear-gradient(135deg, #0d3633, #abcdef) !important;
+    /* background: linear-gradient(135deg, #0d3633, #abcdef) !important; */
+    background: linear-gradient(135deg, #0d3633, #04795a) !important;
   }
 
 .bg-middle-custom{
     background-color:#0d3633;
 }
   
+.bg-primary-customm{
+  background-color: #f6ffde;
+}
   /* .absolute-cont {
     position: absolute;
     width: 100%;
@@ -86,4 +90,14 @@
     
     list-style-type: none;
     padding-left:0;
+  }
+
+
+  .auth-header{
+    font-size:3.8rem;
+  }
+
+  .image-wrapper{
+    max-width:100%;
+    
   }

@@ -49,7 +49,7 @@
 
 // export default App;
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState,useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Register from './pages/Register';
@@ -63,6 +63,7 @@ import { Navigate } from 'react-router-dom';
 import Navbar from './pages/Navbar';
 import FetchUser from './pages/FetchUser';
 import Splash from './pages/Splash';
+import Comp from './pages/Comp';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -113,7 +114,7 @@ const App = () => {
     <Router>
       <nav>
         <ul>
-          {!isAuthenticated && (
+          {/* {!isAuthenticated && (
             <>
             <nav class="navbar bg-body-tertiary">
   <form class="container-fluid justify-content-start">
@@ -122,14 +123,10 @@ const App = () => {
   </form>
 </nav>
 <Splash/>
-              {/* <li>
-                <Link to="/register">Register</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li> */}
+<Comp/>
+              
             </>
-          )}
+          )} */}
           {isAuthenticated && (
             <li>
             <div class="hstack gap-3">
@@ -154,6 +151,7 @@ const App = () => {
       <Routes>
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route exact path="/new" element={<Splash />} />
 
         {isAuthenticated ? (
           <>
@@ -163,7 +161,7 @@ const App = () => {
             <Route exact path="/my-checks" element={<MyCheck />} />
           </>
         ) : (
-          <Route path="*" element={<Navigate to="/register" />} />
+          <Route path="*" element={<Navigate to="/new" />} />
           
         )}
         

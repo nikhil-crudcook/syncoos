@@ -85,6 +85,7 @@ import React, { useState,useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate,Link } from 'react-router-dom';
 import GoogleLoginComponent from './GoogleLoginComponent';
+import Comp from './Comp';
 
 
 
@@ -118,18 +119,39 @@ const Login = ({ onLogin }) => {
     }
   };
 
-  const handleGoogleLoginSuccess = async (token) => {
-    try {
-      const response = await axios.post('http://localhost:8080/api/auth/google', { token });
-      console.log('Google login response:', response.data);
-      onLogin(response.data.access_token);
-      navigate("/");
-    } catch (error) {
-      console.error('Error logging in with Google:', error);
-    }
+  const handleGoogleLoginSuccess = (token) => {
+    // Send token to backend
+    fetch('http://localhost:8080/api/auth/google', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ token }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Login successful:', data);
+      // Save token, update UI, etc.
+    })
+    .catch(error => {
+      console.error('Error during login:', error);
+    });
   };
 
+  // const handleGoogleLoginSuccess = async (token) => {
+  //   try {
+  //     const response = await axios.post('http://localhost:8080/api/auth/google', { token });
+  //     console.log('Google login response:', response.data);
+  //     onLogin(response.data.access_token);
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.error('Error logging in with Google:', error);
+  //   }
+  // };
+
   return (
+    <div className='d-flex flex-row justify-content-center align-items-center'> 
+    <Comp/>
     <div className="container col-4 mb-3">
       <h2>Login</h2>
       
@@ -165,6 +187,7 @@ const Login = ({ onLogin }) => {
       <div className="my-3">
         <GoogleLoginComponent onLoginSuccess={handleGoogleLoginSuccess} />
       </div>
+    </div>
     </div>
   );
 };
