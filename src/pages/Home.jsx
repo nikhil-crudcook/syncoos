@@ -10,8 +10,9 @@ const Home = () => {
     <>
     
 
-    <Sidebar/>
-    {/* <Navbar/> */}
+    {/* <Sidebar/> */}
+    
+    <Navbar/>
     <CreateCheck/>
 
     <Routes>

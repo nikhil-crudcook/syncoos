@@ -135,12 +135,12 @@ const App = () => {
             {user.firstName} {user.lastName}
   </div>
   <div className="p-2">
-                  <button className="btn btn-outline-primary">
+                  <button className="btn btn-outline-success">
                     {getInitials(user.firstName, user.lastName)}
                   </button>
                   </div>
   <div class="vr"></div>
-  <div class="p-2"><button onClick={handleLogout} className="btn btn-secondary">Logout</button></div>
+  <div class="p-2"><button onClick={handleLogout} className="btn btn-success">Logout</button></div>
 </div>
               
             </li>

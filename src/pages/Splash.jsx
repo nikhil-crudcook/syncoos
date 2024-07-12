@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import syncoos from '../assets/syncoos.png';
 import check3 from '../assets/check3.png';
@@ -11,10 +12,18 @@ import tdBank from '../assets/bank3.png'
 import citizensBank from '../assets/bank4.png'
 import email from '../assets/email.png'
 import user from '../assets/user.png'
+import pcheck2 from '../assets/pcheck2.png'
 
 import './Splash.css'
 
 const Splash = () => {
+  const [image,setImage]=useState(pcheck);
+  const [feature,setFeature]=useState('');
+
+  const handleImageChange=(image,feature)=>{
+    setImage(image);
+    setFeature(feature);
+  }
   return (
     <div className="p-0 m-0 bg-transparent">
     <div className='header-section bg-primary-custom pt-2 ps-2'>
@@ -53,6 +62,8 @@ const Splash = () => {
     <div className="icon light-bg d-flex align-items-center justify-content-center my-3">
     <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0H2C1.46957 0 0.960859 0.210714 0.585786 0.585786C0.210714 0.960859 0 1.46957 0 2V15C0 15.5304 0.210714 16.0391 0.585786 16.4142C0.960859 16.7893 1.46957 17 2 17H20C20.5304 17 21.0391 16.7893 21.4142 16.4142C21.7893 16.0391 22 15.5304 22 15V2C22 1.46957 21.7893 0.960859 21.4142 0.585786C21.0391 0.210714 20.5304 0 20 0V0ZM2 15V2H10V15H2ZM20 15H12V2H20V15ZM13 5.5H19V7H13V5.5ZM13 8H19V9.5H13V8ZM13 10.5H19V12H13V10.5Z" fill="#E7FEAB"></path></svg>
         </div>
+        {/* bg-light rounded-circle d-flex justify-content-center align-items-center mx-auto mb-3 */}
+        {/* icon light-bg bg-light rounded circle d-flex align-items-center justify-content-center my-3 */}
     <h3 className='text-white'>Address Book</h3>
     <p>Stores contact information of frequently used payees, making it easy to write and print checks quickly.</p>
     </div>
@@ -98,7 +109,8 @@ const Splash = () => {
     <div class="container mt-5">
     <div class="row">
       <div class="col-lg-6 d-flex flex-column justify-content-between">
-        <div class="feature-box bg-light-custom mb-4">
+        <div class={`feature-box mb-4 ${feature === 'checkPrinting' ? 'active bg-primary-customm' : 'bg-light-custom'}`}
+         onClick={() => handleImageChange(pcheck,'checkPrinting')}>
           <div class="d-flex align-items-center">
             <div class="feature-icon me-3">
               <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -111,7 +123,8 @@ const Splash = () => {
             </div>
           </div>
         </div>
-        <div class="feature-box mb-4">
+        <div class={`feature-box mb-4 ${feature === 'cloudSync' ? 'active bg-primary-customm' : 'bg-light-custom'}`}
+         onClick={() => handleImageChange(pcheck2,'cloudSync')}>
           <div class="d-flex align-items-center">
             <div class="feature-icon me-3">
               <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,7 +137,8 @@ const Splash = () => {
             </div>
           </div>
         </div>
-        <div class="feature-box">
+        <div class={`feature-box mb-4 ${feature === 'checkCancel' ? 'active bg-primary-customm' : 'bg-light-custom'}`}
+        onClick={() => handleImageChange(checkv,'checkCancel')}>
           <div class="d-flex align-items-center">
             <div class="feature-icon me-3">
               <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,7 +153,7 @@ const Splash = () => {
         </div>
       </div>
       <div class="col-lg-6">
-        <img src={pcheck} alt="Check Image" class="img-fluid rounded"/>
+        <img src={image} alt="Check Image" class="img-fluid rounded"/>
       </div>
     </div>
   </div>

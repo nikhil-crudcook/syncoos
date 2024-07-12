@@ -125,6 +125,7 @@ const Login = ({ onLogin }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        // 'Authorization': `Bearer ${token}`
       },
       body: JSON.stringify({ token }),
     })
@@ -132,6 +133,8 @@ const Login = ({ onLogin }) => {
     .then(data => {
       console.log('Login successful:', data);
       // Save token, update UI, etc.
+      localStorage.setItem('token', data.access_token);
+      navigate('/');
     })
     .catch(error => {
       console.error('Error during login:', error);
