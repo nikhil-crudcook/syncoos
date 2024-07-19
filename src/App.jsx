@@ -64,6 +64,10 @@ import Navbar from './pages/Navbar';
 import FetchUser from './pages/FetchUser';
 import Splash from './pages/Splash';
 import Comp from './pages/Comp';
+import CreatePage from './pages/CreatePage';
+import MyCheckPage from './pages/MyCheckPage';
+import Logoutup from './pages/Logoutup';
+
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -112,25 +116,16 @@ const App = () => {
   return (
     
     <Router>
-      <nav>
+    {/* {isAuthenticated && <Logoutup/>} */}
+      {/* <nav>
         <ul>
-          {/* {!isAuthenticated && (
-            <>
-            <nav class="navbar bg-body-tertiary">
-  <form class="container-fluid justify-content-start">
-    <button class="btn btn-outline-info me-2" type="button"><Link to="/register" className="text-decoration-none">Register</Link></button>
-    <button class="btn btn-sm btn-outline-info" type="button"><Link to="/login" className="text-decoration-none">Login</Link></button>
-  </form>
-</nav>
+          
 <Splash/>
 <Comp/>
-              
-            </>
-          )} */}
           {isAuthenticated && (
             <li>
             <div class="hstack gap-3">
-  {/* <div class="p-2">First item</div> */}
+  
   <div class="p-2 ms-auto">
             {user.firstName} {user.lastName}
   </div>
@@ -146,7 +141,7 @@ const App = () => {
             </li>
           )}
         </ul>
-      </nav>
+      </nav> */}
       
       <Routes>
         <Route exact path="/register" element={<Register />} />
@@ -157,8 +152,8 @@ const App = () => {
           <>
           {console.log("abc")}
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/create-check" element={<CreateCheck />} />
-            <Route exact path="/my-checks" element={<MyCheck />} />
+            <Route exact path="/create-check" element={<CreatePage />} />
+            <Route exact path="/my-checks" element={<MyCheckPage />} />
           </>
         ) : (
           <Route path="*" element={<Navigate to="/new" />} />

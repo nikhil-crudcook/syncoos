@@ -13,6 +13,7 @@ import citizensBank from '../assets/bank4.png'
 import email from '../assets/email.png'
 import user from '../assets/user.png'
 import pcheck2 from '../assets/pcheck2.png'
+import appstore from '../assets/appstore.png'
 
 import './Splash.css'
 
@@ -252,7 +253,7 @@ const Splash = () => {
         <div className='d-flex flex-row align-items-center justify-content-start'><span className="contact-icon">&#9993;</span>support@synccos.com</div>
         <div><span className="contact-icon">&#9742;</span>+ 2 833 145678</div>
         <div><span className="contact-icon">&#127968;</span>Highland Mills NY</div>
-        <div><img src={playstore} alt='Download'/><img src={playstore} alt='Download'/></div>
+        <div><img  className="me-3 mt-2" src={playstore} alt='Download'/><img src={appstore} alt='Download'/></div>
         </div>
         </div>
       </div>

@@ -1,0 +1,28 @@
+
+  /* input:focus, select:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid green !important;
+  }
+   */
+  .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: green !important;
+  }
+  
+  .MuiInputLabel-root.Mui-focused{
+    color:green !important;
+  }
+
+  .MuiInputLabel-root.Mui-focused {
+    color: green;
+  }
+
+  label.Mui-focused {
+    color: 'green',
+  }
+
+  .form-check-input:checked {
+    background-color: green;
+    border-color: green;
+  }
+
+  

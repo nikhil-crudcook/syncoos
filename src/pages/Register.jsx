@@ -10,7 +10,6 @@ const Register = () => {
     username: '',
     password: '',
     confirmPassword: '',
-    role: 'ADMIN'
   });
 
   const [error, setError] = useState('');
@@ -43,7 +42,6 @@ const Register = () => {
         username: '',
         password: '',
         confirmPassword: '',
-        role: 'ADMIN'
       });
       navigate('/login');
     } catch (error) {

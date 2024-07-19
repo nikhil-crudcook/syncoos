@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Tooltip  from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
 
 const MyCheck = () => {
   const [checks, setChecks] = useState([]);
@@ -24,30 +30,56 @@ const MyCheck = () => {
   }, []);
 
   return (
-    <div>
-    <div className='m-4'>
+    <div style={{width:'100%',padding:'6px'}}>
+    <div className='my-3'>
+    <div className='hstack'>
       <h2>Check List</h2>
+      <Tooltip  className='ms-auto' title="Help">
+      <IconButton>
+        <HelpOutlineIcon />
+      </IconButton>
+    </Tooltip>
+    </div>
+
       <hr></hr>
+      <div className='hstack'>
+      <p>Below is the list  of all your checks.</p>
+      <Link to='/create-check' className='ms-auto'><Button 
+      variant="contained" 
+      color="primary" 
+      startIcon={<AddIcon />} 
+      // style={{ backgroundColor: '#1E3A61', color: '#fff' }}
+    >
+      New
+    </Button>
+    </Link>
       </div>
-      <table className="table m-4">
+      </div>
+      <table className="table ">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Bank Account</th>
-            <th>Payee</th>
-            <th>Amount</th>
+            {/* <th>ID</th> */}
             <th>Check Number</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Payee</th>
             <th>Issue Date</th>
+            <th>Tags</th>
+            <th>Bank Account</th>
             <th>Invoice ID</th>
             <th>Memo</th>
-            <th>Tags</th>
-            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           {checks.map((check) => (
             <tr key={check.id}>
-              <td>{check.id}</td>
+            <td>{check.checkNumber}</td>
+            <td>{check.status}</td>
+            <td>{check.amount}</td>
+            <td>{check.payee}</td>
+            <td>{check.issueDate}</td>
+            <td>{check.tags}</td>
+              {/* <td>{check.id}</td>
               <td>{check.bankAccount}</td>
               <td>{check.payee}</td>
               <td>{check.amount}</td>
@@ -56,7 +88,7 @@ const MyCheck = () => {
               <td>{check.invoiceId}</td>
               <td>{check.memo}</td>
               <td>{check.tags}</td>
-              <td>{check.status}</td>
+              <td>{check.status}</td> */}
             </tr>
           ))}
         </tbody>

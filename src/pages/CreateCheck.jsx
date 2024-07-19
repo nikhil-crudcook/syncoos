@@ -6,14 +6,28 @@ import IconButton from '@mui/material/IconButton';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import DollarIcon from '@mui/icons-material/AttachMoney';
+
+import Navbar from './Navbar'
+
 const CreateCheck = () => {
+
+  const getCurrentDate=()=>{
+    const date=new Date();
+    const year=date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
 
   const [formData, setFormData] = useState({
     bankAccount: '',
     payee: '',
     amount: '',
     checkNumber: '',
-    issueDate: '',
+    issueDate: getCurrentDate(),
     invoiceId: '',
     memo: '',
     tags: '',
@@ -76,7 +90,8 @@ const CreateCheck = () => {
 
   return (
     <>
-
+    <div>
+    
     <div className="my-3 hstack">
     <h2 className='mx-4'>Create Check</h2>
     <div className='ms-auto'>
@@ -128,6 +143,17 @@ const CreateCheck = () => {
       </div>
       <div className="col-md-4 hstack">
         
+      {/* <TextField
+      label="Amount"
+      variant="outlined"
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <DollarIcon />
+          </InputAdornment>
+        ),
+      }}
+    /> */}
         <input
           type="text"
           name="amount"
@@ -299,6 +325,7 @@ const CreateCheck = () => {
     <button type="submit" className="btn btn-primary">Sign in</button>
   </div> */}
 
+</div>
     </>
 
   )
