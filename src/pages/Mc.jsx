@@ -19,6 +19,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Chip } from '@mui/material';
 import './MyCheck.css'
 
 
@@ -40,7 +41,7 @@ function Row(props) {
         <TableCell>{row.amount}</TableCell>
         <TableCell>{row.payee}</TableCell>
         <TableCell>{row.issueDate}</TableCell>
-        <TableCell>{row.tags}</TableCell>
+        <TableCell><Chip>{row.tags}</Chip></TableCell>
         <TableCell>{row.bankAccount}</TableCell>
         <TableCell>{row.invoiceId}</TableCell>
         <TableCell>{row.memo}</TableCell>

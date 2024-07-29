@@ -45,7 +45,7 @@ const Splash = () => {
     check writer</h2>
     <p className='text-white-50'>Create and print checks with ease using our check writer application.</p>
     </div>
-    <img src={check3} alt="check3"/>
+    <img src={check3} alt="check3" />
 
     </div>
     
