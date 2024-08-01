@@ -1,0 +1,73 @@
+.check-preview {
+    width: 800px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    color:#5EA479
+  }
+  
+  .header, .body, .foooter {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sender-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .checkNumber{
+    flex:1;
+    text-align:right;
+    color:white;
+    margin-top: 0px;
+  }
+  .checkNumber span{
+    background-color: #5EA479;
+    padding:14px;
+    display:inline-block;
+    /* width:fit-content; */
+  }
+  
+  .date {
+    flex: 1;
+    text-align: right;
+    display: inline-block; /* Keeps the underline confined to the content width */
+    /* margin-top:3px;
+    vertical-align: middle;
+  border-bottom: 1px solid green; */
+  }
+  
+  
+  .body {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .payee, .amount, .amount-text, .memo {
+    margin: 10px 0;
+  }
+  
+  .amount {
+    text-align: right;
+  }
+  
+  .amount-text {
+    font-style: italic;
+  }
+  
+  .memo {
+    margin-top: 30px;
+  }
+  
+  .foooter {
+    justify-content: flex-end;
+    margin-top: 50px;
+  }
+  
+  .foooter p {
+    border-top: 1px solid #5EA479;
+    padding-top: 10px;
+  }
+  

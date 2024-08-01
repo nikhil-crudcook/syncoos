@@ -19,7 +19,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
+
+import SnackbarComponent from './Snackbar';
 import { Chip } from '@mui/material';
+
 import './MyCheck.css'
 
 
@@ -41,7 +44,7 @@ function Row(props) {
         <TableCell>{row.amount}</TableCell>
         <TableCell>{row.payee}</TableCell>
         <TableCell>{row.issueDate}</TableCell>
-        <TableCell><Chip>{row.tags}</Chip></TableCell>
+        <TableCell>{row.tags}</TableCell>
         <TableCell>{row.bankAccount}</TableCell>
         <TableCell>{row.invoiceId}</TableCell>
         <TableCell>{row.memo}</TableCell>
@@ -90,6 +93,8 @@ function Row(props) {
 
 const MyCheck = () => {
   const [checks, setChecks] = useState([]);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
 
   useEffect(() => {
     const fetchChecks = async () => {
@@ -119,9 +124,15 @@ const MyCheck = () => {
         }
       });
       setChecks(checks.filter((check) => check.id !== id));
+      setSnackbarMessage("Check Deleted Successfully");
+      setSnackbarOpen(true);
     } catch (error) {
       console.error('Error deleting check', error);
     }
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
   };
 
 
@@ -171,6 +182,12 @@ const MyCheck = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <SnackbarComponent
+      open={snackbarOpen}
+      message={snackbarMessage}
+      severity="success"
+      handleClose={handleSnackbarClose}
+      />
     </div>
   );
 };
