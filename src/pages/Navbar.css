@@ -1,7 +1,6 @@
 *{
     margin:0;
     padding:0;
-    text-decoration: none;
 }
 .containerm{
     display:flex;
@@ -11,10 +10,12 @@ main{
     padding: 20px;
 }
 .sidebaro{
-    background: #456942;
-    color: #fff;
+    position:fixed;
+    /* background: #456942;
+    color: #fff; */
     /* background: #fff;
     color: #0a0a0a; */
+    border-right: 1px solid #ddd;
     height: 100vh;
     width: 200px;
     transition: all 0.5s;
@@ -25,12 +26,15 @@ main{
     padding:20px 15px;
 }
 .logo{
-    font-size: 30px;
+    font-size: 3px;
+    align-items: baseline;
+    transition: all 0.5s;
 }
 .bars{
     display: flex;
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 50px;
+    color:black
 }
 .link{
     display: flex;
@@ -38,6 +42,7 @@ main{
     padding: 10px 15px;
     gap: 15px;
     transition: all 0.5s;
+    text-decoration: none;
 }
 /* .link:hover{
     background:lightskyblue;
@@ -49,6 +54,20 @@ main{
     color: #000;
 } */
 .icon, .link_text{
-    font-size: 20px;
+    font-size: 15px;
+    color:black;
     /* color:#0a0a0a */
+}
+.link:hover{
+    background-color: #f4f4f4;
+}
+main {
+    margin-left: 150px; /* Match the sidebar width */
+    padding: 20px;
+    flex: 1;
+    overflow: auto; /* Ensure main content can scroll */
+    height: 100vh; /* Full viewport height */
+}
+main.collapsed {
+    margin-left: 50px; /* Adjust margin when sidebar is collapsed */
 }
